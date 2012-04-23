@@ -12,3 +12,4 @@ jQuery ($) ->
   $(".table th").first().addClass("ui-corner-tl")
   $(".table th").last().addClass("ui-corner-tr")
   $(".table td").each -> $(this).addClass("ui-widget-content")
+  $("input:submit, button").button();

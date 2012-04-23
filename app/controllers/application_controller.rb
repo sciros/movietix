@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
 
   private
@@ -33,8 +32,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def store_location_with_message
+    store_location
+    unless current_user
+      flash[:notice] = "For best experience, log in"
+    end
+    return false
+  end
+
   def store_location
-    session[:return_to] = request.request_uri
+    session[:return_to] = request.url
   end
 
   def redirect_back_or_default(default)

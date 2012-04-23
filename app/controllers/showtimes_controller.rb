@@ -19,6 +19,8 @@ class ShowtimesController < ApplicationController
   # GET /showtimes/1.json
   def show
     @showtime = Showtime.find(params[:id])
+    @movie = Movie.find(@showtime.movie_id)
+    @theater = Theater.find(@showtime.theater_id)
 
     respond_to do |format|
       format.html # show.html.erb

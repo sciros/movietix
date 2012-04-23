@@ -1,16 +1,25 @@
 Movietix::Application.routes.draw do
+  root :controller => "user_sessions", :action => "new"
+
+  resource :account, :controller => "users"
+  resource :user_session
+
+  resources :users
+  resources :showtimes
+
   match '/theaters/viewtheaters', :controller => 'theaters', :action => 'viewtheaters'
+
   resources :theaters do
     #list of theater's showtimes
     resources :showtimes
   end
 
   resources :movies do
-    #list of movie showtimes
+    #list of theaters playing movie
     resources :theaters
   end
 
-  resources :showtimes
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

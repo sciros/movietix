@@ -1,4 +1,6 @@
 class TheatersController < ApplicationController
+  before_filter :store_location_with_message
+
   # GET /theaters
   # GET /theaters.json
   def index

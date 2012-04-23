@@ -112,11 +112,12 @@ div {
   right: 25px;
   top: 15px;
   width: 250px;
-  height: 59px;
+  height: 53px;
   border-width: 2px;
   border-style: solid;
   border-color: #ddcf2f;
-  padding: 3px;
+  padding: 6px 10px 6px 10px;
+  text-align: right;
 }
 .table th {
   padding: 8px;
@@ -139,4 +140,15 @@ td {
 .hover_row {
   border-top-color: #aaccff;
   border-bottom-color: #aaccff;
+}
+
+.form_container {
+  background-color: #333333;
+  border: 1px solid;
+  margin: 5px;
+  padding: 5px;
+}
+
+.flash {
+  color: #88aadd
 }
