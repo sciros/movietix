@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+abc_24:
+  name: ABC IMAX 24
+  zip: 43210
+  description: has imax
+
+rage_18:
+  name: Rage Motion Pictures 18
+  zip: 43240
+  description: rubbish seats
+
+abc_30:
+  name: ABC IMAX 30
+  zip: 43219
+  description: sells booze at concessions
+
+studio_36:
+  name: Studio 36
+  zip: 43209
+  description: for hipsters

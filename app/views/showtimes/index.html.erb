@@ -1,0 +1,33 @@
+<div class="title"><%= @theater.name %> : Showtimes</div>
+
+<table class="table">
+  <tr>
+    <th>Movie</th>
+    <th>Showtimes</th>
+  </tr>
+  
+<% @movie_hash.keys.each do |movie_id| %>
+  <% @movie = Movie.find(movie_id) %>
+  <tr>
+    <td class="movie_name_cell">
+      <%= link_to @movie.name, movie_path(@movie) %>
+    </td>
+    <td>
+    <% @movie_hash[movie_id].each do |showtime| %>
+      <%= (showtime != @movie_hash[movie_id].first) ? ',' : '' %>
+      <% if showtime.seats_available > 0 then %>
+        <span class="available">
+          <%= link_to showtime.time+" p.m.", showtime_path(showtime)  %>
+        </span>
+      <% else %>
+        <span class="sold_out">
+          <%= showtime.time %> p.m.
+        </span>
+      <% end %>
+    <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />

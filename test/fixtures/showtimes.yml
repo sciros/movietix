@@ -1,0 +1,206 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+s1:
+  movie: revengers
+  theater: abc_24
+  time: '6:00'
+  seats_available: 300
+
+s2:
+  movie: revengers
+  theater: abc_24
+  time: '9:00'
+  seats_available: 300
+
+s3:
+  movie: arachnidman
+  theater: abc_24
+  time: '4:00'
+  seats_available: 300
+
+s4:
+  movie: arachnidman
+  theater: abc_24
+  time: '6:30'
+  seats_available: 0
+
+s5:
+  movie: arachnidman
+  theater: abc_24
+  time: '9:00'
+  seats_available: 2
+
+s6:
+  movie: two_d_array
+  theater: abc_24
+  time: '6:00'
+  seats_available: 1
+
+s7:
+  movie: two_d_array
+  theater: abc_24
+  time: '8:30'
+  seats_available: 300
+
+s8:
+  movie: hungry_games
+  theater: abc_24
+  time: '5:30'
+  seats_available: 0
+
+s9:
+  movie: hungry_games
+  theater: abc_24
+  time: '7:30'
+  seats_available: 0
+
+s10:
+  movie: game_of_chairs
+  theater: abc_24
+  time: '9:00'
+  seats_available: 300
+
+s11:
+  movie: revengers
+  theater: rage_18
+  time: '6:00'
+  seats_available: 300
+
+s12:
+  movie: revengers
+  theater: rage_18
+  time: '8:30'
+  seats_available: 300
+
+s13:
+  movie: revengers
+  theater: rage_18
+  time: '11:00'
+  seats_available: 300
+
+s14:
+  movie: arachnidman
+  theater: rage_18
+  time: '5:00'
+  seats_available: 300
+
+s15:
+  movie: arachnidman
+  theater: rage_18
+  time: '8:00'
+  seats_available: 0
+
+s16:
+  movie: two_d_array
+  theater: rage_18
+  time: '5:00'
+  seats_available: 300
+
+s17:
+  movie: two_d_array
+  theater: rage_18
+  time: '7:30'
+  seats_available: 300
+
+s18:
+  movie: two_d_array
+  theater: rage_18
+  time: '10:00'
+  seats_available: 300
+
+s19:
+  movie: hungry_games
+  theater: rage_18
+  time: '4:30'
+  seats_available: 0
+
+s20:
+  movie: hungry_games
+  theater: rage_18
+  time: '6:30'
+  seats_available: 5
+
+s21:
+  movie: hungry_games
+  theater: rage_18
+  time: '8:30'
+  seats_available: 300
+
+s22:
+  movie: revengers
+  theater: abc_30
+  time: '6:15'
+  seats_available: 300
+
+s23:
+  movie: revengers
+  theater: abc_30
+  time: '9:00'
+  seats_available: 300
+
+s24:
+  movie: arachnidman
+  theater: abc_30
+  time: '5:30'
+  seats_available: 300
+
+s25:
+  movie: arachnidman
+  theater: abc_30
+  time: '8:00'
+  seats_available: 300
+
+s26:
+  movie: arachnidman
+  theater: abc_30
+  time: '10:30'
+  seats_available: 0
+
+s27:
+  movie: two_d_array
+  theater: abc_30
+  time: '7:00'
+  seats_available: 300
+
+s28:
+  movie: two_d_array
+  theater: abc_30
+  time: '10:00'
+  seats_available: 300
+
+s29:
+  movie: hungry_games
+  theater: abc_30
+  time: '5:00'
+  seats_available: 0
+
+s30:
+  movie: hungry_games
+  theater: abc_30
+  time: '7:00'
+  seats_available: 300
+
+s31:
+  movie: hungry_games
+  theater: abc_30
+  time: '9:00'
+  seats_available: 0
+
+s32:
+  movie: two_d_array
+  theater: studio_36
+  time: '6:45'
+  seats_available: 300
+
+s33:
+  movie: game_of_chairs
+  theater: studio_36
+  time: '6:00'
+  seats_available: 300
+
+s34:
+  movie: game_of_chairs
+  theater: studio_36
+  time: '9:00'
+  seats_available: 300
+
