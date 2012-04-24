@@ -1,4 +1,6 @@
 class ShowtimesController < ApplicationController
+  before_filter :store_location_with_message
+
   # GET /showtimes
   # GET /showtimes.json
   def index

@@ -7,7 +7,8 @@ Movietix::Application.routes.draw do
   resources :users
   resources :showtimes
 
-  match '/theaters/viewtheaters', :controller => 'theaters', :action => 'viewtheaters'
+  match '/theaters/viewtheaters', :to => 'theaters#viewtheaters'
+  match '/showtimes/:id/buyTix', :to => 'showtimes#buyTix', :as => :buy_tix
 
   resources :theaters do
     #list of theater's showtimes

@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   def store_location_with_message
     store_location
     unless current_user
-      flash[:notice] = "For best experience, log in"
+      flash[:notice] = "Log in to buy tix!"
     end
     return false
   end
