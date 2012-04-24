@@ -11,16 +11,54 @@ admin = User.create(:login => "admin", :password => "P4ssw0rd", :password_confir
 revengers_synopsis = "When a malicious entity with dubious motivations threatens Earth with epic CG explosions, \
 an unlikely band of heroes teams up to shatter previous box-office records."
 
-revengers = Movie.create(:name => "The Revengers", :running_time => 135, :rating => 2, :description => revengers_synopsis)
-arachnidman = Movie.create(:name => "Arachnidman", :running_time => 110, :rating => 3)
-two_d_array = Movie.create(:name => "The 2D Array", :running_time => 120, :rating => 2)
-hungry_games = Movie.create(:name => "The Hungry Games", :running_time => 90, :rating => 1)
-game_of_chairs = Movie.create(:name => "Game of Chairs", :running_time => 115, :rating => 4)
+arachnidman_synopsis = "When Harry Horker got bitten by a radioactive spider, he had no idea that he'd grow \
+four more arms, six more eyes, and spin webbing from somewhere in his nether regions. And that because this \
+made him hideous rather than cool looking, he'd have to play the villain against the more visually appealing \
+Geckoman in an epic role-reversal. But like Harry's uncle once said, 'With a great number of limbs comes great
+responsibility.'"
 
-abc_24 = Theater.create(:name => "ABC IMAX 24", :zip => 43210, :description => "has imax")
-rage_18 = Theater.create(:name => "Rage Motion Pictures 18", :zip => 43240, :description => "rubbish seats")
-abc_30 = Theater.create(:name => "ABC IMAX 30", :zip => 43219, :description => "sells booze at concessions")
-studio_36 = Theater.create(:name => "Studio 36", :zip => 43209, :description => "for hipsters")
+two_d_array_synopsis = "Duo thought he had it all figured out, hacking his way through rubbish movie ticketing \
+sites all day long, right up until he hacks the wrong one and ends up being chased by goons in nice suits and \
+cool shades. That's when an idiot tells him that the real world isn't actually real, but is something called the \
+2D Array which is created by robots to fool humans into remaining perpetually asleep while these robots spoon \
+with the humans for warmth."
+
+hungry_games_synopsis = "Ripped off a Japanese story about kids having to eat bizarre sushi, this is a tale of a \
+dystopian future where colonies find the hungriest, craziest kids they can to enter into a hot dog eating contest. \
+The losers get turned into hot dogs to be used for future contests."
+
+game_of_chairs_synopsis = "In a world where a giant wall is all that separates the civilized world from beings that \
+raise the undead, where dragons are returning to burn kingdoms to ashes, where a decade-long winter threatens to wipe \
+out half of the population, the biggest concern is show the audience as much boobage as physically possible."
+
+revengers = Movie.create(:name => "The Revengers", :running_time => 135, :rating => 2, :description => revengers_synopsis)
+arachnidman = Movie.create(:name => "Arachnidman", :running_time => 110, :rating => 3, :description => arachnidman_synopsis)
+two_d_array = Movie.create(:name => "The 2D Array", :running_time => 120, :rating => 2, :description => two_d_array_synopsis)
+hungry_games = Movie.create(:name => "The Hungry Games", :running_time => 90, :rating => 1, :description => hungry_games_synopsis)
+game_of_chairs = Movie.create(:name => "Game of Chairs", :running_time => 115, :rating => 4, :description => game_of_chairs_synopsis)
+
+abc_24_description = "This theater boasts 24 screens in total, stadium seating, and eye-watering concession prices. \
+It has an IMAX screen, although you can barely tell. It also shows 3D movies if you're in the mood for spending \
+more money in return for severely reduced image brightness and the opportunity to put some extra strain on your eyes. \
+Most of the new releases play here."
+
+rage_18_description = "Rage is a relatively new theater, using higher-quality projectors than most others. Their seats \
+aren't that comfortable, though, and the screens are quite small. Also there's frequently an automobile in the theater \
+lobby for some contest or other."
+
+abc_30_description = "This theater has a weird concessions area where you gather everything and then check out at a \
+register the way you would at a cafeteria. But it has booze, which gives it an edge over others. It also has 30 \
+screens, one of which is an IMAX."
+
+studio_36_description = "A gathering place for hipsters and Big Leboswki fans, this theater is a relic from the 1700s, \
+when movies were just drawings on paper that people would quickly thumb through to create the illusion of animation. \
+It serves alcohol and has just one screen. For some reason, the floor of the theater tilts down as you get further \
+from the screen rather than up."
+
+abc_24 = Theater.create(:name => "ABC IMAX 24", :zip => 43210, :description => abc_24_description)
+rage_18 = Theater.create(:name => "Rage Motion Pictures 18", :zip => 43240, :description => rage_18_description)
+abc_30 = Theater.create(:name => "ABC IMAX 30", :zip => 43219, :description => abc_30_description)
+studio_36 = Theater.create(:name => "Studio 36", :zip => 43209, :description => studio_36_description)
 
 s1 = Showtime.create(:movie => revengers, :theater => abc_24, :time => '6:00', :seats_available => 300)
 s2 = Showtime.create(:movie => revengers, :theater => abc_24, :time => '9:00', :seats_available => 300)
