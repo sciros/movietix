@@ -8,7 +8,10 @@
 
 admin = User.create(:login => "admin", :password => "P4ssw0rd", :password_confirmation => "P4ssw0rd")
 
-revengers = Movie.create(:name => "The Revengers", :running_time => 135, :rating => 2)
+revengers_synopsis = "When a malicious entity with dubious motivations threatens Earth with epic CG explosions, \
+an unlikely band of heroes teams up to shatter previous box-office records."
+
+revengers = Movie.create(:name => "The Revengers", :running_time => 135, :rating => 2, :description => revengers_synopsis)
 arachnidman = Movie.create(:name => "Arachnidman", :running_time => 110, :rating => 3)
 two_d_array = Movie.create(:name => "The 2D Array", :running_time => 120, :rating => 2)
 hungry_games = Movie.create(:name => "The Hungry Games", :running_time => 90, :rating => 1)
@@ -53,3 +56,4 @@ s31  = Showtime.create(:movie => hungry_games, :theater => abc_30, :time => '9:0
 s32  = Showtime.create(:movie => two_d_array, :theater => studio_36, :time => '6:45', :seats_available => 300)
 s33  = Showtime.create(:movie => game_of_chairs, :theater => studio_36, :time => '6:00', :seats_available => 300)
 s34  = Showtime.create(:movie => game_of_chairs, :theater => studio_36, :time => '9:00', :seats_available => 300)
+

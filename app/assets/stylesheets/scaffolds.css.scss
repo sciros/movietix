@@ -152,3 +152,24 @@ td {
 .flash {
   color: #88aadd
 }
+
+.movie_name_cell a, .theater_name_cell a {
+  color: white;
+  text-decoration: none;
+  &:visited {
+    color: white;
+  }
+  &:hover {
+    color: #ffffaa;
+  }
+}
+
+.description {
+  border: 1px solid orange;
+  padding: 3px;
+  margin: 3px;
+}
+
+.gold {
+  color: gold;
+}

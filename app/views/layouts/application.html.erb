@@ -22,8 +22,11 @@
   </div>
 </header>
 <div id="content" class="ui-widget-content">
-<%= yield %>
+  <%= yield %>
+  <hr/>
+  Browse
+  <%= link_to 'Movies', movies_path %> |
+  <%= link_to 'Theaters', theaters_path %>
 </div>
-<footer></footer>
 </body>
 </html>

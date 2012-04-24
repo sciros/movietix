@@ -1,25 +1,23 @@
-<h1>Listing theaters</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Zip</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @theaters.each do |theater| %>
-  <tr>
-    <td><%= theater.name %></td>
-    <td><%= theater.zip %></td>
-    <td><%= link_to 'Show', theater %></td>
-    <td><%= link_to 'Edit', edit_theater_path(theater) %></td>
-    <td><%= link_to 'Destroy', theater, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Theater', new_theater_path %>
+<div class="title">Local Theaters</div>
+<br/>
+<div id="theaters_accordion">
+  <% @theaters.each do |theater| %>
+      <h3><a href="#"><%=  theater.name %></a></h3>
+      <div>
+        <%= link_to 'Click for Showtimes', theater_showtimes_path(theater), :class => 'showtime_link' %>
+        <hr/>
+        <div class="theater_now_playing">
+          <span style="color:#999999">Now playing</span><br/>
+            <% theater.movies.uniq.each do |movie| %>
+              <%= movie.name %><br/>
+            <% end %>
+        </div>
+        <div class="theater_info">
+          <%= theater.description %>
+        </div>
+        <div class="theater_location">
+          Zip Code <%= theater.zip %><br/><br/>
+        </div>
+      </div>
+  <% end %>
+</div>

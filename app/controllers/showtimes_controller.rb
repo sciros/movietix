@@ -17,6 +17,22 @@ class ShowtimesController < ApplicationController
     end
   end
 
+  # GET /movie/:movie_id/showtimes
+  # GET /movie/:movie_id/showtimes.json
+  def showtimesByMovie
+    @movie = Movie.find(params[:movie_id])
+    @showtimes = @movie.showtimes
+    @theater_hash = Hash.new{|hash, key| hash[key] = []}
+    @showtimes.each do |showtime|
+      @theater_hash[showtime.theater_id.to_s] << showtime
+    end
+
+    respond_to do |format|
+      format.html # showtimesByMovie.html.erb
+      format.json { render json: @showtimes }
+    end
+  end
+
   # GET /showtimes/1
   # GET /showtimes/1.json
   def show
@@ -27,6 +43,37 @@ class ShowtimesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @showtime }
+    end
+  end
+
+  # GET /showtimes/1/buyTix
+  def buyTix
+    @showtime = Showtime.find(params[:id])
+    @movie = Movie.find(@showtime.movie_id)
+    @theater = Theater.find(@showtime.theater_id)
+
+    respond_to do |format|
+      format.html #buyTix.html.erb
+    end
+  end
+
+  # POST /showtimes/1/buyTix
+  def processTixPurchase
+    @showtime = Showtime.find(params[:id])
+    @movie = Movie.find(@showtime.movie_id)
+    @theater = Theater.find(@showtime.theater_id)
+    @num_tix = params[:tix]
+    seats_left = @showtime.seats_available.to_int - @num_tix.to_i
+
+    if seats_left < 0 then
+      @showtime.errors.add(:available_seats, 'Not enough tix available')
+    else
+      @showtime.seats_available = seats_left
+      @showtime.save
+    end
+
+    respond_to do |format|
+      format.html #processTixPurchase.html.erb
     end
   end
 

@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_filter :store_location_with_message
+
   # GET /movies
   # GET /movies.json
   def index

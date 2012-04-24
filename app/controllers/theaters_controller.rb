@@ -12,17 +12,6 @@ class TheatersController < ApplicationController
     end
   end
 
-  # GET /theaters/viewtheaters
-  # GET /theaters/viewtheaters.json
-  def viewtheaters
-    @theaters = Theater.all
-
-    respond_to do |format|
-      format.html #viewtheaters.html.erb
-      format.json { render json: @theaters }
-    end
-  end
-
   # GET /theaters/1
   # GET /theaters/1.json
   def show

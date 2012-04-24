@@ -1,27 +1,26 @@
-<h1>Listing movies</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Running time</th>
-    <th>Rating</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @movies.each do |movie| %>
-  <tr>
-    <td><%= movie.name %></td>
-    <td><%= movie.running_time %></td>
-    <td><%= movie.rating %></td>
-    <td><%= link_to 'Show', movie %></td>
-    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-    <td><%= link_to 'Destroy', movie, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Movie', new_movie_path %>
+<div class="title">Now Playing</div>
+<br/>
+<div id="movies_accordion">
+  <% @movies.each do |movie| %>
+      <h3><a href="#"><%=  movie.name %></a></h3>
+      <div>
+        <%= link_to 'Click for Showtimes', movie_showtimes_path(movie), :class => 'showtime_link' %>
+        <hr/>
+        <div class="movie_now_playing">
+          <span style="color:#999999">Now playing at:</span><br/>
+            <% movie.theaters.uniq.each do |theater| %>
+              <%= theater.name %><br/>
+            <% end %>
+          </ul>
+        </div>
+        <div class="movie_synopsis">
+          <%= movie.description %>
+        </div>
+        <div class="movie_info">
+          Running time: <%= movie.running_time %> min<br/>
+          Rating: <% (0..movie.rating.to_i).each do %>*<% end %>
+        </div>
+      </div>
+  <% end %>
+</div>
+<br/>

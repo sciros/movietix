@@ -15,19 +15,17 @@
     <td>
     <% @movie_hash[movie_id].each do |showtime| %>
       <%= (showtime != @movie_hash[movie_id].first) ? ',' : '' %>
-      <% if showtime.seats_available > 0 then %>
-        <span class="available">
-          <%= link_to showtime.time+" p.m.", showtime_path(showtime)  %>
-        </span>
+      <span <% if showtime.seats_available > 0 and showtime.seats_available < 10 then %>
+        class="running_out"
+      <% elsif showtime.seats_available > 0 then %>
+        class="available"
       <% else %>
-        <span class="sold_out">
-          <%= showtime.time %> p.m.
-        </span>
-      <% end %>
+        class="sold_out"
+      <% end %>>
+        <%= link_to showtime.time+" p.m.", showtime_path(showtime) %>
+      </span>
     <% end %>
     </td>
   </tr>
 <% end %>
 </table>
-
-<br />
