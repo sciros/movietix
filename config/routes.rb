@@ -2,13 +2,18 @@ Movietix::Application.routes.draw do
   root :controller => "movies", :action => "index"
 
   resource :account, :controller => "users"
-  resource :user_session
 
+  get 'logout' => 'sessions#destroy', :as => 'logout'
+  get 'login' => 'sessions#new', :as => 'login'
+  get 'signup' => 'users#new', :as => 'signup'
+
+  resources :sessions
   resources :users
   resources :showtimes
 
   match '/showtimes/:id/buyTix', :to => 'showtimes#buyTix', :via => 'get', :as => :buy_tix
-  match '/showtimes/:id/buyTix', :to => 'showtimes#processTixPurchase', :via => 'post'
+  match '/showtimes/:id/confirmTixPurchase', :to => 'showtimes#confirmTixPurchase', :as => 'confirm_tix_purchase', :via => 'post'
+  match '/showtimes/:id/finishTixPurchase', :to => 'showtimes#finishTixPurchase', :as => 'finish_tix_purchase', :via => 'post'
   match '/movies/:movie_id/showtimes', :to => 'showtimes#showtimesByMovie'
 
   resources :theaters do

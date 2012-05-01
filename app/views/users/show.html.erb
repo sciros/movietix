@@ -1,6 +1,16 @@
 <p>
-  <b>Login:</b>
+  <b>Name:</b>
   <%=h @user.login %>
+  <br/><br/>
+  <% @purchases = Purchase.find_all_by_user_id(@user.id) %>
+  Tix purchased:
+  <ul>
+  <% @purchases.each do |purchase| %>
+    <% @showtime = Showtime.find(purchase.showtime_id) %>
+    <% @movie = Movie.find(@showtime.movie_id) %>
+    <% @theater = Theater.find(@showtime.theater_id) %>
+    <% @cost = purchase.num_tickets * @theater.ticket_price %>
+    <li><%= purchase.num_tickets %> to <%= @movie.name %> at <%= @theater.name %> at <%= @showtime.time %>: <%= number_to_currency(@cost) %></li>
+  <% end %>
+  </ul>
 </p>
-
-<%= link_to 'Edit', edit_account_path %>

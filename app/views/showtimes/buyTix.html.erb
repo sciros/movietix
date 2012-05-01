@@ -3,7 +3,7 @@
 <p><strong><%= @movie.name %></strong><br/>
 <%= @showtime.time %> p.m. at <%= @theater.name %></p>
 
-<%= form_tag buy_tix_path(@showtime), :method=>'post', :multipart => true do %>
+<%= form_tag confirm_tix_purchase_path(@showtime), :method=>'post', :multipart => true do %>
   <%= label :tix, 'Number of tix' %>
   <%= number_field_tag :tix %>
   <%= submit_tag 'Buy' %>

@@ -12,10 +12,10 @@
   <div class="login_container ui-corner-all ui-widget-content">
     <% if !current_user %>
       <%= link_to "Register", new_account_path %> <strong>|</strong>
-      <%= link_to "Log In", new_user_session_path %><br/>
+      <%= link_to "Log In", login_path %><br/>
     <% else %>
       <%= link_to "My Account", account_path %> |
-      <%= link_to "Logout", user_session_path, :method => :delete %><br/>
+      <%= link_to "Logout", logout_path %><br/>
       Welcome, <%= link_to @current_user.login, edit_account_path %><br/>
     <% end %>
     <span class="flash"><%= flash[:notice] %></span>

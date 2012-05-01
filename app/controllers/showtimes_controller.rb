@@ -1,5 +1,6 @@
 class ShowtimesController < ApplicationController
   before_filter :store_location_with_message
+  before_filter :require_user, :only => [:buyTix, :confirmTixPurchase, :finishTixPurchase]
 
   # GET /showtimes
   # GET /showtimes.json
@@ -57,8 +58,8 @@ class ShowtimesController < ApplicationController
     end
   end
 
-  # POST /showtimes/1/buyTix
-  def processTixPurchase
+  # POST /showtimes/1/confirmTixPurchase
+  def confirmTixPurchase
     @showtime = Showtime.find(params[:id])
     @movie = Movie.find(@showtime.movie_id)
     @theater = Theater.find(@showtime.theater_id)
@@ -67,13 +68,37 @@ class ShowtimesController < ApplicationController
 
     if seats_left < 0 then
       @showtime.errors.add(:available_seats, 'Not enough tix available')
-    else
-      @showtime.seats_available = seats_left
-      @showtime.save
     end
 
     respond_to do |format|
-      format.html #processTixPurchase.html.erb
+      format.html #confirmTixPurchase.html.erb
+    end
+  end
+
+  # POST /showtimes/1/finishTixPurchase
+  def finishTixPurchase
+    @showtime = Showtime.find(params[:id])
+    @movie = Movie.find(@showtime.movie_id)
+    @theater = Theater.find(@showtime.theater_id)
+    @num_tix = params[:tix]
+
+    seats_left = @showtime.seats_available.to_int - @num_tix.to_i
+
+    if seats_left < 0 then
+      @showtime.errors.add(:available_seats, 'Not enough tix available')
+    else
+      @showtime.seats_available = seats_left
+      if @showtime.tickets_sold == nil then
+        @showtime.tickets_sold = 0
+      end
+      @showtime.tickets_sold = @showtime.tickets_sold + @num_tix.to_i
+      @showtime.save
+
+      @purchase = Purchase.create(:user_id => @current_user.id, :showtime_id => @showtime.id, :num_tickets => @num_tix.to_i)
+    end
+
+    respond_to do |format|
+      format.html #finishTixPurchase.html.erb
     end
   end
 

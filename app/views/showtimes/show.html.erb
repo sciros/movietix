@@ -20,7 +20,7 @@
   <% if @showtime.seats_available > 0 then %>
   <b>Tix available</b>
     <% if !current_user then %>
-      <%= link_to 'Log in to buy tix', new_user_session_path %>
+      <%= link_to 'Log in to buy tix', login_url %>
     <% else %>
       <%= link_to 'Buy Tix', buy_tix_path(@showtime), :class => 'button' %>
     <% end %>

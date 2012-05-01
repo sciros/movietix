@@ -5,8 +5,10 @@ jQuery ($) ->
   $(".table tr").hover(
     ->
       $(this).children("td[class~='movie_name_cell']").addClass("ui-state-active")
+      $(this).children("td[class~='theater_name_cell']").addClass("ui-state-active")
       $(this).children("td").addClass("hover_row")
     ->
       $(this).children("td[class~='movie_name_cell']").removeClass("ui-state-active")
+      $(this).children("td[class~='theater_name_cell']").removeClass("ui-state-active")
       $(this).children("td").removeClass("hover_row")
   )
