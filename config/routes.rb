@@ -11,6 +11,8 @@ Movietix::Application.routes.draw do
   resources :users
   resources :showtimes
 
+  match '/admin/stats', :to => 'admin#stats', :via => 'get', :as => 'admin_stats'
+
   match '/showtimes/:id/buyTix', :to => 'showtimes#buyTix', :via => 'get', :as => :buy_tix
   match '/showtimes/:id/confirmTixPurchase', :to => 'showtimes#confirmTixPurchase', :as => 'confirm_tix_purchase', :via => 'post'
   match '/showtimes/:id/finishTixPurchase', :to => 'showtimes#finishTixPurchase', :as => 'finish_tix_purchase', :via => 'post'
