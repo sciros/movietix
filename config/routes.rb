@@ -15,6 +15,7 @@ Movietix::Application.routes.draw do
 
   match '/showtimes/:id/buyTix', :to => 'showtimes#buyTix', :via => 'get', :as => :buy_tix
   match '/showtimes/:id/confirmTixPurchase', :to => 'showtimes#confirmTixPurchase', :as => 'confirm_tix_purchase', :via => 'post'
+  match '/showtimes/:id/confirmTixPurchase', :to => redirect('/showtimes/%{id}'), :via => 'get'
   match '/showtimes/:id/finishTixPurchase', :to => 'showtimes#finishTixPurchase', :as => 'finish_tix_purchase', :via => 'post'
   match '/movies/:movie_id/showtimes', :to => 'showtimes#showtimesByMovie'
 

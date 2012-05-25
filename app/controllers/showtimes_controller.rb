@@ -67,7 +67,8 @@ class ShowtimesController < ApplicationController
     seats_left = @showtime.seats_available.to_int - @num_tix.to_i
 
     if seats_left < 0 then
-      @showtime.errors.add(:available_seats, 'Not enough tix available')
+      @error_message = 'Only ' + @showtime.seats_available.to_s + ' seat' + (@showtime.seats_available.to_int > 1 ? 's' : '') + ' available for this showtime'
+      @showtime.errors.add(:available_seats, @error_message)
     end
 
     respond_to do |format|
@@ -85,7 +86,8 @@ class ShowtimesController < ApplicationController
     seats_left = @showtime.seats_available.to_int - @num_tix.to_i
 
     if seats_left < 0 then
-      @showtime.errors.add(:available_seats, 'Not enough tix available')
+      @error_message = 'Only ' + seats_left + ' seats available for this showtime'
+      @showtime.errors.add(:available_seats, @error_message)
     else
       @showtime.seats_available = seats_left
       if @showtime.tickets_sold == nil then

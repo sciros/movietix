@@ -33,3 +33,20 @@
     color: #af6500;
   }
 }
+
+.billing_info {
+  z-index: 50;
+  position: absolute;
+  top: 100px;
+  left: 250px;
+  border: 3px solid #ff4500;
+  padding: 2px;
+  color: #fffad0;
+  background-color: black;
+  width: 350px;
+}
+
+.sub_heading {
+  font-size: 15px;
+  color: #ffcc66;
+}

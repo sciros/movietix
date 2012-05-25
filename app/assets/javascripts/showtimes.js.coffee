@@ -12,3 +12,7 @@ jQuery ($) ->
       $(this).children("td[class~='theater_name_cell']").removeClass("ui-state-active")
       $(this).children("td").removeClass("hover_row")
   )
+  $("#billingInfoDiv").hide()
+  $("#billingInfoAnchor").button()
+  0
+

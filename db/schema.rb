@@ -13,11 +13,13 @@
 
 ActiveRecord::Schema.define(:version => 20120501051103) do
 
+  create_database "movietix";
+
   create_table "movies", :force => true do |t|
     t.string  "name"
     t.integer "running_time"
     t.integer "rating"
-    t.string  "description"
+    t.text    "description"
   end
 
   create_table "purchases", :force => true do |t|
@@ -39,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20120501051103) do
   create_table "theaters", :force => true do |t|
     t.string  "name"
     t.integer "zip"
-    t.string  "description"
+    t.text    "description"
     t.decimal "ticket_price"
   end
 
