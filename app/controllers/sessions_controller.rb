@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
         flash[:notice] = "Login successful!"
         redirect_back_or_default account_url
       else
-        render "new"
+        flash[:notice] = "bad credentials"
+        redirect_back_or_default login_url
       end
     end
   end
@@ -17,6 +18,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:notice] = "Logout successful!"
-    redirect_back_or_default login_url
+    redirect_to login_url
   end
 end

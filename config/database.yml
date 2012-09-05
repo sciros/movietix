@@ -9,24 +9,27 @@
 #  pool: 5
 #  timeout: 5000
 development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: movietix
+  pool: 5
+  #username: root
+  #password: Password1
+  #host: localhost
+  username: dba
+  password: P4ssw0rd
+  host: 10.11.5.76
+
+production:
   adapter: mysql
   encoding: utf8
   reconnect: false
   database: movietix
   pool: 5
   username: root
-  password: Password1
+  password: '@dtt4tr@1n'
   host: localhost
-
-#production:
-#  adapter: mysql
-#  encoding: utf8
-#  reconnect: false
-#  database: movietix
-#  pool: 5
-#  username: root
-#  password: '@dtt4tr@1n'
-#  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
