@@ -19,7 +19,7 @@ made him hideous rather than cool looking, he'd have to play the villain against
 Geckoman in an epic role-reversal. But like Harry's uncle once said, 'With a great number of limbs comes great
 responsibility.'"
 
-two_d_array_synopsis = "Duo thinks he has it all figured out, hacking his way through rubbish movie ticketing \
+two_d_array_synopsis = "Ted thinks he has it all figured out, hacking his way through rubbish movie ticketing \
 sites all day long, right up until he hacks the wrong one and ends up being chased by goons in nice suits and \
 cool shades. That's when an idiot tells him that the real world isn't actually real, but is something called the \
 2D Array which is created by robots to fool humans into remaining perpetually asleep while these robots spoon \
@@ -31,7 +31,7 @@ The losers get turned into hot dogs to be used for future contests."
 
 game_of_chairs_synopsis = "In a world where a giant wall is all that separates the civilized world from beings that \
 raise the undead, where dragons are returning to burn kingdoms to ashes, where a decade-long winter threatens to wipe \
-out half of the population, the biggest concern is to show the audience as much boobage as physically possible."
+out half of the population, the biggest concern is to show the audience as much nudity as physically possible."
 
 revengers = Movie.create(:name => "The Revengers", :running_time => 135, :rating => 2, :description => revengers_synopsis)
 arachnidman = Movie.create(:name => "Arachnidman", :running_time => 110, :rating => 3, :description => arachnidman_synopsis)
