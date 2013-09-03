@@ -1,7 +1,7 @@
 Movietix::Application.routes.draw do
-  root :controller => "movies", :action => "index"
+  root :controller => 'movies', :action => 'index'
 
-  resource :account, :controller => "users"
+  resource :account, :controller => 'users'
 
   get 'logout' => 'sessions#destroy', :as => 'logout'
   get 'login' => 'sessions#new', :as => 'login'

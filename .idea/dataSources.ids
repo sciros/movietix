@@ -1,1 +1,17 @@
-<?xml version='1.0' encoding='UTF-8' ?><component name="dataSourceStorage"><data-source source="LOCAL" name="Rails movietix: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="6701e87d-ef07-490d-81ac-755189fa4180"><jdbc-driver>org.sqlite.JDBC</jdbc-driver><jdbc-url>jdbc:sqlite:C:\projects\movietix\db\test.sqlite3</jdbc-url><libraries><library><url>file://$USER_HOME$/.RubyMine40/config/jdbc-drivers/xerial-sqlite-license.txt</url></library><library><url>jar://$USER_HOME$/.RubyMine40/config/jdbc-drivers/sqlite-jdbc-3.7.2.jar!/</url></library></libraries></data-source><data-source source="LOCAL" name="Rails movietix: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="c065b701-623d-45e8-8277-423f08349e7d"><jdbc-driver>org.sqlite.JDBC</jdbc-driver><jdbc-url>jdbc:sqlite:C:\projects\movietix\db\development.sqlite3</jdbc-url><libraries><library><url>file://$USER_HOME$/.RubyMine40/config/jdbc-drivers/xerial-sqlite-license.txt</url></library><library><url>jar://$USER_HOME$/.RubyMine40/config/jdbc-drivers/sqlite-jdbc-3.7.2.jar!/</url></library></libraries></data-source></component>
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails movietix: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="5a598ee5-6b7c-4d21-aef8-f0ed7b10a833">
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://dsharkovmbp.local/movietix</jdbc-url>
+    <user-name>tester</user-name>
+    <user-password>dffadf9edfd9dfd9dfdddf9adfd8dfce</user-password>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>

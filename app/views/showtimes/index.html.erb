@@ -6,26 +6,32 @@
     <th>Showtimes</th>
   </tr>
   
-<% @movie_hash.keys.each do |movie_id| %>
-  <% @movie = Movie.find(movie_id) %>
+<% movie_index = 1
+   @movie_hash.keys.each do |movie_id|
+   @movie = Movie.find(movie_id) %>
   <tr>
     <td class="movie_name_cell">
       <%= link_to @movie.name, movie_path(@movie) %>
     </td>
     <td>
-    <% @movie_hash[movie_id].each do |showtime| %>
+    <% showtime_index = 1
+       @movie_hash[movie_id].each do |showtime| %>
       <%= (showtime != @movie_hash[movie_id].first) ? ',' : '' %>
-      <span <% if showtime.seats_available > 0 and showtime.seats_available < 10 then %>
-        class="running_out"
-      <% elsif showtime.seats_available > 0 then %>
-        class="available"
-      <% else %>
-        class="sold_out"
-      <% end %>>
-        <%= link_to showtime.time+" p.m.", showtime_path(showtime) %>
+      <span class="<%= if showtime.seats_available > 0 and showtime.seats_available < 10 then
+                         'running_out'
+                       elsif showtime.seats_available > 0 then
+                         'available'
+                       else
+                         'sold_out'
+                       end
+                     %>">
+        <%= link_to showtime.time+' p.m.', showtime_path(showtime),
+                    :id => 'showtime_'+movie_index.to_s+'_'+showtime_index.to_s %>
       </span>
-    <% end %>
+    <% showtime_index += 1
+       end %>
     </td>
   </tr>
-<% end %>
+<% movie_index += 1
+   end %>
 </table>

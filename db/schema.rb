@@ -13,8 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120501051103) do
 
-  create_database "movietix";
-
   create_table "movies", :force => true do |t|
     t.string  "name"
     t.integer "running_time"
@@ -46,10 +44,10 @@ ActiveRecord::Schema.define(:version => 20120501051103) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login",             :null => false
+    t.string   "login",           :null => false
     t.string   "password_digest", :null => false
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

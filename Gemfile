@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.13'
 
-gem 'therubyracer'
+#uncommented on the externally hosted apache box
+#gem 'therubyracer'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'mysql2'
+gem 'sqlite3'
+gem 'mysql2', '~> 0.3.11'
 
 # Gems used only for assets and not required
 # in production environments by default.

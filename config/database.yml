@@ -1,36 +1,8 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
 #development:
 #  adapter: sqlite3
 #  database: db/development.sqlite3
 #  pool: 5
 #  timeout: 5000
-development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: movietix
-  pool: 5
-  #username: root
-  #password: Password1
-  #host: localhost
-  username: dba
-  password: P4ssw0rd
-  host: 10.11.5.76
-
-production:
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  database: movietix
-  pool: 5
-  username: root
-  password: '@dtt4tr@1n'
-  host: localhost
-
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 #test:
@@ -44,3 +16,49 @@ production:
 #  database: db/production.sqlite3
 #  pool: 5
 #  timeout: 5000
+
+
+#development:
+#  adapter: sqlite3
+#  database: db/movietix
+#  pool: 5
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: movietix
+  pool: 5
+  #username: root
+  #password: Password1
+  #host: localhost
+  username: tester
+  password: P4ssw0rd
+  host: dsharkovmbp.local
+
+production:
+  adapter: sqlite3
+  database: db/prod.movietix
+  pool: 5
+
+#development:
+#  adapter: mysql2
+#  encoding: utf8
+#  reconnect: false
+#  database: movietix
+#  pool: 5
+#  #username: root
+#  #password: Password1
+#  #host: localhost
+#  username: dba
+#  password: P4ssw0rd
+#  host: 10.11.5.30
+#
+#production:
+#  adapter: mysql
+#  encoding: utf8
+#  reconnect: false
+#  database: movietix
+#  pool: 5
+#  username: root
+#  password: '@dtt4tr@1n'
+#  host: localhost
